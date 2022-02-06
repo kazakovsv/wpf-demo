@@ -2,9 +2,9 @@
 
 namespace Demo01_Transformations
 {
-    public partial class DemoTranslateTransform : UserControl
+    public partial class DemoRotateTransform : UserControl
     {
-        public DemoTranslateTransform()
+        public DemoRotateTransform()
         {
             InitializeComponent();
         }

@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="Demo01_Transformations.DemoTranslateTransform"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Demo01_Transformations"
+             x:Class="Demo01_Transformations.DemoRotateTransform"
              mc:Ignorable="d" 
              d:DesignHeight="576"
              d:DesignWidth="384">
@@ -19,7 +19,7 @@
 
             <TextBlock Background="Blue"
                        Foreground="White"
-                       Text="Translate Transform"
+                       Text="Rotate Transform"
                        TextAlignment="Center"
                        FontFamily="Arial"
                        FontWeight="Bold"
@@ -51,8 +51,9 @@
                       UseLayoutRounding="True"
                       StrokeEndLineCap="Round">
                 <Polyline.RenderTransform>
-                    <TranslateTransform X="{Binding ElementName=_xRangeBox, Path=Value}"
-                                        Y="{Binding ElementName=_yRangeBox, Path=Value}"/>
+                    <RotateTransform Angle="{Binding ElementName=_angleRangeBox, Path=Value}"
+                                     CenterX="{Binding ElementName=_centerXRangeBox, Path=Value}"
+                                     CenterY="{Binding ElementName=_centerYRangeBox, Path=Value}"/>
                 </Polyline.RenderTransform>
             </Polyline>
 
@@ -64,23 +65,31 @@
                       Grid.Row="2"
                       BorderBrush="Blue"
                       Margin="1">
-                <Grid Margin="3">
+                <Grid Margin="3"
+                      Grid.IsSharedSizeScope="True">
                     <Grid.RowDefinitions>
+                        <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <local:RangeBox x:Name="_xRangeBox"
-                                    LabelContent="X:"
+                    <local:RangeBox x:Name="_angleRangeBox"
+                                    LabelContent="Angle:"
                                     Foreground="Blue"
                                     Margin="3"
                                     Grid.Row="0"/>
 
-                    <local:RangeBox x:Name="_yRangeBox"
-                                    LabelContent="Y:"
+                    <local:RangeBox x:Name="_centerXRangeBox"
+                                    LabelContent="CenterX:"
                                     Foreground="Blue"
                                     Margin="3"
                                     Grid.Row="1"/>
+
+                    <local:RangeBox x:Name="_centerYRangeBox"
+                                    LabelContent="CenterY:"
+                                    Foreground="Blue"
+                                    Margin="3"
+                                    Grid.Row="2"/>
                 </Grid>
             </GroupBox>
         </Grid>
