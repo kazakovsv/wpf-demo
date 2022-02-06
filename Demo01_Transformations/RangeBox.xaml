@@ -1,0 +1,43 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Demo01_Transformations.RangeBox"
+             x:Name="_rangeBox">
+    <Border BorderBrush="{x:Static SystemColors.ActiveBorderBrush}"
+            BorderThickness="1"
+            Background="{x:Static SystemColors.ControlBrush}"
+            SnapsToDevicePixels="True">
+        <Grid Margin="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0"
+                   Content="{Binding ElementName=_rangeBox, Path=LabelContent}"
+                   Margin="1"
+                   VerticalAlignment="Center"/>
+            <Rectangle Grid.Column="1"
+                       Width="1"
+                       Fill="{x:Static SystemColors.ActiveBorderBrush}"
+                       Margin="1"/>
+            <Slider x:Name="_slider"
+                    Grid.Column="2"
+                    Margin="1"
+                    Value="{Binding ElementName=_rangeBox, Path=Value, Mode=TwoWay}"
+                    Minimum="-50"
+                    Maximum="50"
+                    SmallChange="1"
+                    LargeChange="10"
+                    TickFrequency="1"
+                    TickPlacement="Both"
+                    IsSnapToTickEnabled="True"
+                    VerticalAlignment="Center"/>
+            <TextBox Grid.Column="3"
+                     Margin="1"
+                     VerticalContentAlignment="Center"
+                     Text="{Binding ElementName=_slider, Path=Value}"/>
+        </Grid>
+    </Border>
+</UserControl>
