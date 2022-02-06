@@ -15,6 +15,7 @@
             </Grid.ColumnDefinitions>
 
             <Label Grid.Column="0"
+                   Foreground="{Binding ElementName=_rangeBox, Path=Foreground}"
                    Content="{Binding ElementName=_rangeBox, Path=LabelContent}"
                    Margin="1"
                    VerticalAlignment="Center"/>
@@ -37,6 +38,7 @@
             <TextBox Grid.Column="3"
                      Margin="1"
                      VerticalContentAlignment="Center"
+                     Foreground="{Binding ElementName=_rangeBox, Path=Foreground}"
                      Text="{Binding ElementName=_slider, Path=Value}"/>
         </Grid>
     </Border>
