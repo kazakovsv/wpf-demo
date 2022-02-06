@@ -12,7 +12,7 @@
 
         <local:DemoTranslateTransform Grid.Column="0" Margin="3"/>
         <local:DemoRotateTransform Grid.Column="1" Margin="3"/>
-        <local:DemoTranslateTransform Grid.Column="2" Margin="3"/>
+        <local:DemoSkewTransform Grid.Column="2" Margin="3"/>
         <local:DemoTranslateTransform Grid.Column="3" Margin="3"/>
     </Grid>
 </Window>

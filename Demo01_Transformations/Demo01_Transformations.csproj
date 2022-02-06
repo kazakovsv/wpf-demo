@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DemoSkewTransform.xaml.cs">
+      <DependentUpon>DemoSkewTransform.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DemoRotateTransform.xaml.cs">
       <DependentUpon>DemoRotateTransform.xaml</DependentUpon>
     </Compile>
@@ -64,6 +67,10 @@
     <Compile Include="RangeBox.xaml.cs">
       <DependentUpon>RangeBox.xaml</DependentUpon>
     </Compile>
+    <Page Include="DemoSkewTransform.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="DemoRotateTransform.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
